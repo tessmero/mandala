@@ -54,6 +54,8 @@ class Donut extends Pattern {
     }
 
     _draw(g,offset=null){
+        g.beginPath()
         this.allCircles.forEach( b => b.draw(g,offset) )
+        g.stroke()
     }
 }

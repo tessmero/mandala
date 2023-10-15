@@ -11,13 +11,14 @@ class Star extends Pattern {
         
         this.rad = scale*.4
         this.nVerts = randInt(3,6)
-        this.nReps = randInt(2,4)
+        this.nReps = 4
     }
     
 
     _draw(g,offset=null){
+        g.beginPath()
         for( var i = 0 ; i < this.nReps ; i++ ){
-            var angle = pio2 + twopi * i / this.nReps
+            var angle = pio2 + twopi * i / this.nReps / this.nVerts
             for( var j = 0 ; j <= this.nVerts ; j++ ){
                 var a = angle + twopi * j / this.nVerts
                 var p = global.screenCenter.add( vp( a, this.rad ) )
@@ -29,5 +30,6 @@ class Star extends Pattern {
                 }
             }
         }
+        g.stroke()
     }
 }

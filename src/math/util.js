@@ -111,6 +111,15 @@ function shuffle(array) {
   return array;
 }
 
+function hexToRgb(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+}
+
 function constructCircle(x1, y1, x2, y2, x3, y3) {
 const h = (
         (x1 * x1 + y1 * y1) * (y2 - y3) +

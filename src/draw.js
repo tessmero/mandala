@@ -6,22 +6,20 @@ function draw(fps, t) {
     var g = global.ctx
     var canvas = global.canvas
     g.lineCap = 'round'
+    g.lineJoin = 'round'
 
     // iterate over layers due for drawing
     while ( global.lastDrawnHi < global.currentHi ) {
         global.lastDrawnHi += 1
         
         // draw layer shadow
-        g.strokeStyle = global.shadowColor[0]
-        global.activePatterns.forEach( p => p.draw(g, global.shadowO[0] ) )
+        global.activePatterns.forEach( p => p.draw(g,1) )
         
         // draw layer shadow
-        g.strokeStyle = global.shadowColor[1]
-        global.activePatterns.forEach( p => p.draw(g, global.shadowO[1] ) )
+        global.activePatterns.forEach( p => p.draw(g,2) )
 
         // draw layer sand
-        g.strokeStyle = global.sandColor
-        global.activePatterns.forEach( p => p.draw(g ) )
+        global.activePatterns.forEach( p => p.draw(g,0) )
         
         global.activePatterns.forEach( p => p.layerIndex += 1 )
     }

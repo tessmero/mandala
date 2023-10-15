@@ -23,7 +23,7 @@ const global = {
     layerDelay: 20, // ms per layer
     patternDelay: 100, // ms to spawn new pattern
     maxActivePatterns: 2,
-    maxTotalPatterns: 6,
+    maxTotalPatterns: 4,
       
     // state
     t: 0, // total time elapsed
@@ -37,7 +37,7 @@ const global = {
     layerTaper: .001, // narrowing between layers, 0 -> 90 degree steps
     sandD: v(0,-.0005), // offset per layer of sand 
     patternO: v(0,-.005), // offset per pattern (a bunch of layers)
-    shadowO: [v(.001,.001),v(-.001,-.001)], // shadow offset
+    shadowO: [v(.002,.002),v(-.001,-.001)], // shadow offset
     
     // move automatically if no user input
     autoMoveCountdown: 0,
