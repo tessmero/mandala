@@ -3,18 +3,8 @@
 // Initialize the game
 function init() {
     var cvs = document.getElementById("gameCanvas");
-    cvs.addEventListener("mousemove", mouseMove);
-    
-    // https://stackoverflow.com/a/63469884
-    var previousTouch;
-    cvs.addEventListener("touchmove", (e) => {
-        const touch = e.touches[0];
-        mouseMove({
-            clientX: touch.pageX,
-            clientY: touch.pageY
-        })
-        e.preventDefault()
-    });
+    cvs.addEventListener("mousedown", resetGame);
+    cvs.addEventListener("touchmove", resetGame);
     
     
     global.canvas = cvs
@@ -29,9 +19,14 @@ function init() {
 
 
 function resetGame(){
-    resetRand()
+    resetRand(hard=true)
     global.autoResetCountdown = global.autoResetDelay
     global.activePatterns = []
+    global.currentPatternIndex = 0
+    
+
+    global.ctx.fillStyle = global.backgroundColor
+    global.ctx.fillRect(-10,-10,20,20)
 }
 
 // Main game loop

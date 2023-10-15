@@ -15,15 +15,13 @@ const global = {
     // 
     shadowOffset: v(.001,.001),
     backgroundColor: '#F6E0AE',
-    sandColor: '#F6E0AE',
-    shadowColor: ['rgba(0,0,0,.5)','rgba(180,150,100,.2)'],
     lineWidth: .002,
     
     // overall speed settings
-    layerDelay: 20, // ms per layer
-    patternDelay: 100, // ms to spawn new pattern
+    layerDelay: 40, // ms per layer
+    patternDelay: 200, // ms to spawn new pattern
     maxActivePatterns: 2,
-    maxTotalPatterns: 4,
+    maxTotalPatterns: 6,
       
     // state
     t: 0, // total time elapsed
@@ -39,9 +37,9 @@ const global = {
     patternO: v(0,-.005), // offset per pattern (a bunch of layers)
     shadowO: [v(.002,.002),v(-.001,-.001)], // shadow offset
     
-    // move automatically if no user input
-    autoMoveCountdown: 0,
-    autoMoveDelay: 1000,
+    // reset automatically
+    autoResetCountdown: 0,
+    autoResetDelay: 10000,
     
     
     

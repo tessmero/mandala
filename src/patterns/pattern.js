@@ -54,9 +54,9 @@ class Pattern {
             return
         }
         var c = this.stepColors[stepIndex][faceIndex]
-        var alpha = 1
-        if( faceIndex == 1 ) alpha = 1
-        if( faceIndex == 2 ) alpha = 1
+        var alpha = .6
+        if( faceIndex == 1 ) alpha = .6
+        if( faceIndex == 2 ) alpha = .6
         
         c = this.randomColorNoise(c,alpha)
         g.strokeStyle = c

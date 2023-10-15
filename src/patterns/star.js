@@ -12,6 +12,10 @@ class Star extends Pattern {
         this.rad = scale*.4
         this.nVerts = randInt(3,6)
         this.nReps = 4
+        
+        if( scale < .4 ){
+            this.nVerts = 3 //small
+        } 
     }
     
 

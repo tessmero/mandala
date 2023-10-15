@@ -2,6 +2,14 @@
 
 function update(dt) { 
     global.t += dt
+    
+    if( true ){
+        global.autoResetCountdown -= dt
+        if( global.autoResetCountdown < 0 ){
+            resetGame()
+        }
+    }
+    
     global.currentHi = Math.floor(global.t/global.layerDelay)
 
     if( (global.activePatterns.length < global.maxActivePatterns) 
@@ -47,8 +55,7 @@ function fitToContainer(){
         var yr = -global.canvasOffsetY / global.canvasScale
         global.screenCorners = [v(xr,yr),v(1-xr,yr),v(1-xr,1-yr),v(xr,1-yr)]
         global.screenCenter = v(.5,.5)
-
-        global.ctx.fillStyle = global.backgroundColor
-        global.ctx.fillRect(-10,-10,20,20)
+    
+        resetGame()
     }
 }

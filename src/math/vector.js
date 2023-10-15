@@ -40,7 +40,8 @@ class Vector {
     }
     
     add( o ){
-        return new Vector( this.x+o.x, this.y+o.y )
+        if( o ) return new Vector( this.x+o.x, this.y+o.y )
+        return this
     }
     
     sub( o ){
