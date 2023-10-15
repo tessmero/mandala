@@ -1,12 +1,10 @@
 
-Sterographic animation based on "control points" with simple linear motion. Circular arcs are drawn procedurally, where each arc lies tangent to a set of three control points.
-
-Hover or touch to manually animate along 2 dimensions. 
+Intricate sand mandalas are drawn layer by layer like a 3d printer. This is another application of the non-clearing canvas technique used in other demos (trees,sketch,sand).
 
 
 ## Demo
 
-https://tessmero.github.io/donut.html
+https://tessmero.github.io/mandala.html
 
 ## Usage
 
